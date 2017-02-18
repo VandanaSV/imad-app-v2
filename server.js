@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 
 var articles={
-    articleOne:{
+    'article-one':{
         title:'ARTICLE-ONE | THE FOUNTAIN HEAD',
         heading:'THE FOUNTAIN HEAD: AYN RAND',
         date:'February 5,2017',
@@ -17,8 +17,8 @@ var articles={
             <p>
                 The newyork times described the book and its autother as " A writer of great power.She hs a subtle and ingenious mind and the capacity of writing brilliantly,beautifully,bitterly...This is the only novel of ideas written by an American woman that I can recall.".
             </p>`
-},
-    articleTwo:{
+    },
+    'article-two':{
         title:'ARTICLE-TWO | ONE HUNDRED YEARS OF SOLITUDE',
         heading:'ONE HUNDRED YEARS OF SOLITUDE: GABRIEL GARCIA MARQUEZ',
         date:'February 10,2017',
@@ -29,7 +29,7 @@ var articles={
               Through plagues of insomnia,civil war,hauntings and vendettas,the many tribulations of the Buendia house-hold push memories of the manuscript aside.Few remember its existance and only one will discover the hidden message that it holds.
             </p>`
     },
-    articleThree:{
+    'article-three':{
         title:'ARTICLE-THREE | THE CATCHER IN THE RYE',
         heading:'THE CATCHER IN THE RYE: J.D.SALINGER',
         date:'February 15,2017',
@@ -78,28 +78,22 @@ function createTemplate(data)
 }
 
 app.get('/', function (req, res) {
-  res.send(createTemplate(articleOne))
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 
-app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+app.get('/:articleName', function (req, res) {
+    req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+    res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
 app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+    res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
 
