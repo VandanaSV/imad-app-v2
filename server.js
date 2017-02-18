@@ -5,6 +5,45 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var content={
+    title:'ARTICLE-ONE | THE FOUNTAIN HEAD',
+    heading:'THE FOUNTAIN HEAD: AYN RAND',
+    date:'February 5,2017',
+    content:` <p>
+                When it was first published in 1943,The fountainhead containing Ayn Rand's daringly original literary vision  with the seeds of her ground breakingphilosophy,Objectivism -won immediate worldwide acclaim.This instant classic is the story of an intransigent young architect,his violent battle against conventional standards and his explosie love affair with a beautiful woman who struggles to defeat him.
+            </p>
+            <p>
+                The newyork times described the book and its autother as " A writer of great power.She hs a subtle and ingenious mind and the capacity of writing brilliantly,beautifully,bitterly...This is the only novel of ideas written by an American woman that I can recall.".
+            </p>`
+};
+
+var htmlTemplate=`<html>
+    <head>
+        <title>${title}</title>
+        <meta name="viewport" content="width-device-width,initial-scale-1"/>
+       <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+        <div>
+            <a href='/'>HOME</a>
+        </div>
+        <hr/>
+        <h3>
+            ${heading}
+        </h3>
+        <div>
+            ${date}
+        </div>
+        <div>
+            ${content}
+        </div>
+        </div>
+    </body>
+</html>
+`
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
