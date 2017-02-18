@@ -21,7 +21,7 @@ var articles={
     'article-two':{
         title:'ARTICLE-TWO | ONE HUNDRED YEARS OF SOLITUDE',
         heading:'ONE HUNDRED YEARS OF SOLITUDE: GABRIEL GARCIA MARQUEZ',
-        date:'February 10,2017',
+        date:'February 10,2017asdasdsad',
         content:` <p>
               Pipes and kettledrums herald the arrival of gypsies on their annual visit to Mocondo,the newly founded village where Jose Arcadio Buendia and his father with new inventions and tales of adventure ,neither can know the significance of the indecipherirable manuscript that the old gypsies passes into therir hans.
             </p>
