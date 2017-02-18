@@ -11,15 +11,15 @@ app.get('/', function (req, res) {
 
 
 app.get('/article-one', function (req, res) {
-  res.sendFile("I AM ARTICLE ONE");
+  res.send("I AM ARTICLE ONE");
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile("I AM ARTICLE TWO");
+  res.send("I AM ARTICLE TWO");
 });
 
 app.get('/article-three', function (req, res) {
-  res.sendFile("I AM ARTICLE THREE");
+  res.send("I AM ARTICLE THREE");
 });
 
 app.get('/ui/style.css', function (req, res) {
