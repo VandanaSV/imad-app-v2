@@ -18,7 +18,14 @@ var content={
             </p>`
 };
 
-var htmlTemplate=`<html>
+function createTemplate(data)
+{
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+    var htmlTemplate=`
+    <html>
     <head>
         <title>${title}</title>
         <meta name="viewport" content="width-device-width,initial-scale-1"/>
@@ -41,11 +48,13 @@ var htmlTemplate=`<html>
         </div>
         </div>
     </body>
-</html>
-`
+    </html>
+    `;
+    return htmlTemplate;
+}
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.send(createTemplate(articleOne))
 });
 
 
