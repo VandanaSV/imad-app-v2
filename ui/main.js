@@ -13,3 +13,10 @@ function moveRight () {
 img.onClick=function () {
    var interval=setInterval(moveRight,100);
 };*/
+//Counter code
+var button=document.getElementById('counter');
+button.onClick=function (){
+    counter=counter+1;
+    var span=document.getElementById('count');
+    span.innerHtml=counter.toString();
+};
