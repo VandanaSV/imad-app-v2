@@ -1,9 +1,29 @@
-console.log('Loaded!');
+var button=document.getElementById('counter'); 
+var counter=0;
+button.onClick=function (){
+    //make a request to counter endpont
+    
+    //capture the response and store in a variable
+    
+    
+    //render the variable in the correct span
+    counter=counter+1;
+    var span=document.getElementByID('count');
+    span.innerHTML=counter.toString();
+    
+    
+};
+
+
+
+
+
+//console.log('Loaded!');
 
 //Counter code
-var button=document.getElementById('counter');
+//var button=document.getElementById('counter');
 
-button.onClick=function (){
+/* button.onClick=function (){
     var request= new XMLHttpRequest();
     request.onreadystatechange=function(){
         if((request.readyState)===XMLHttpRequest.DONE){
@@ -15,5 +35,7 @@ button.onClick=function (){
         }
         };
         
-    };
+    }; */
+    
+
  
