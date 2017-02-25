@@ -20,13 +20,13 @@ submitButton.onclick=function(){
             var ol=document.getElementById('nameList');
             ol.innerHTML=list;   
             }
-    }
-
-};
+    };
 var nameInput=document.getElementById('name');
 var nameValue=nameInput.value;
 request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ nameValue,true);
 request.send(null);
+};
+
 
 
 /*//The Counter incrementing task
