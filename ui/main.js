@@ -1,9 +1,10 @@
 
 //Submit name javascript
-var nameInput=document.getElementById('name');
-var nameValue=nameInput.value;
+
 var submitButton=document.getElementById('submitButton');
 submitButton.onclick=function(){
+    var nameInput=document.getElementById('name');
+    var nameValue=nameInput.value;
     //Creating a request object
     var request= new XMLHttpRequest();
   // Rendering content inside span tag
