@@ -3,8 +3,7 @@
 
 var submitButton=document.getElementById('submitButton');
 submitButton.onclick=function(){
-    var nameInput=document.getElementById('name');
-    var nameValue=nameInput.value;
+    
     //Creating a request object
     var request= new XMLHttpRequest();
   // Rendering content inside span tag
@@ -24,6 +23,8 @@ submitButton.onclick=function(){
     }
 
 };
+var nameInput=document.getElementById('name');
+var nameValue=nameInput.value;
 request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ nameValue,true);
 request.send(null);
 
