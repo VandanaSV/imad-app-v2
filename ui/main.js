@@ -29,10 +29,10 @@ submitButton.onclick=function(){
     {
         list='<li>'+names[i]+'</li>';
         window.alert(names[i]);
-        var ol=document.getElementById('nameList');
-        ol.innerHTML=list;
+        
     }
-  
+        var ol=document.getElementById('nameList');
+        ol.innerHTML+=list;
     
 };
 
