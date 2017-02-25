@@ -100,18 +100,18 @@ app.get('/ui/madi.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/:articleName', function (req, res) {
-    var articleName=req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
-});
-
 var names=[];
-app.get('/submit-name/:name', function (req, res) {
+app.get('/submit-name', function (req, res) {
     //Get the name from request
-    var name=req.params.name;
+    var name=req.query.name;
     names.push(name);
     //JSON:Javascript Object Notation-To convert javasript objects into strings
     res.send(JSON.stringify(names));
+});
+
+app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
