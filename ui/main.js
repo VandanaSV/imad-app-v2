@@ -16,8 +16,7 @@ commentButton.onclick=function(){
     request.onreadystatechange=function(){
         if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
          var names=request.responseText;
-         
-         comments=JSON.parse(comments);
+         comments=JSON.parse('comments');
          var list='';
          for(var i=0; i<names.length;i++)
             {
