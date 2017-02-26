@@ -16,15 +16,15 @@ commentButton.onclick=function(){
     request.onreadystatechange=function(){
         if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
          var names=request.responseText;
-         names=JSON.parse(names);
+         
          comments=JSON.parse(comments);
          var list='';
          for(var i=0; i<names.length;i++)
             {
-            list+='@<li>'+names[i]+'</li>:<li>'+comments[i]+'</li>';
+            list+='@</li>'+comments[i]+'</li>';
             //window.alert(names[i]);
             }
-            var ol=document.getElementById('nameList');
+            var ol=document.getElementById('commentslist');
             ol.innerHTML=list;   
             }
     };
