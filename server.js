@@ -87,12 +87,12 @@ var names=[];
 var comments=[];
 app.get('/submit-name', function (req, res) {
     //Get the name from request
-    var name=req.query.name;
+   
     var comment=req.query.comment;
-    names.push(name);
+    
     comments.push(comment);
     //JSON:Javascript Object Notation-To convert javasript objects into strings
-    res.send(JSON.stringify(names));
+   
     res.send(JSON.stringify(comments));
     
 });
