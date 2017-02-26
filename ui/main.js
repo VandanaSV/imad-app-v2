@@ -28,8 +28,7 @@ commentButton.onclick=function(){
             ol.innerHTML=list;   
             }
     };
-var name=document.getElementById('Name');
-var nameValue=name.value;
+
 var comments=document.getElementById('Comments');
 var commentValue=comments.value;
 request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ nameValue +"&comment="+ commentValue,true);
