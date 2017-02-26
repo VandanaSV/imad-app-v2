@@ -83,6 +83,18 @@ app.get('/counter', function (req, res) {
     res.send(counter.toString());
 });
 
+var names=[];
+var comments=[];
+app.get('/submit-name', function (req, res) {
+    //Get the name from request
+    var name=req.query.name;
+    var comment=req.query.comment;
+    names.push(name);
+    comments.push(comment);
+    //JSON:Javascript Object Notation-To convert javasript objects into strings
+    res.send(JSON.stringify(names));
+    res.send(JSON.stringify(comments));
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -100,18 +112,7 @@ app.get('/ui/madi.png', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-var names=[];
-var comments=[];
-app.get('/submit-name', function (req, res) {
-    //Get the name from request
-    var name=req.query.name;
-    var comment=req.query.comment;
-    names.push(name);
-    comments.push(comment);
-    //JSON:Javascript Object Notation-To convert javasript objects into strings
-    res.send(JSON.stringify(names));
-    res.send(JSON.stringify(comments));
-});
+
 
 app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
