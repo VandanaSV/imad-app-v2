@@ -92,7 +92,8 @@ app.get('/submit-name', function (req, res) {
     names.push(name);
     comments.push(comment);
     //JSON:Javascript Object Notation-To convert javasript objects into strings
-    res.send(JSON.stringify(names,comments));
+    res.send(JSON.stringify(names));
+    res.send(JSON.stringify(comments));
     
 });
 
