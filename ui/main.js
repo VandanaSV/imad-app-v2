@@ -27,7 +27,11 @@ request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ name
 request.send(null);
 };
 
-
+var downloadButton=document.getElementById('downloadButton');
+downloadButton.onclick=function(){
+    var downloadUrl = "https://drive.google.com/file/d/0B9T6oE4VgbewQ2daTHdTb19VYUk/view?usp=drive_web";
+    window.location=downloadUrl;
+};
 
 /*//The Counter incrementing task
 var button=document.getElementById("counter"); 
