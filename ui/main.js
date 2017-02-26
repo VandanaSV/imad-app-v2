@@ -31,7 +31,7 @@ commentButton.onclick=function(){
 
 var comments=document.getElementById('Comments');
 var commentValue=comments.value;
-request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ nameValue +"&comment="+ commentValue,true);
+request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?comment="+ commentValue,true);
 request.send(null);
 };
 
