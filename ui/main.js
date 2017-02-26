@@ -7,8 +7,8 @@ downloadButton.onclick=function(){
 };
 //Submit name javascript
 
-var submitButton=document.getElementById('submitButton');
-submitButton.onclick=function(){
+var commentButton=document.getElementById('comment-submit');
+commentButton.onclick=function(){
     
     //Creating a request object
     var request= new XMLHttpRequest();
@@ -17,19 +17,22 @@ submitButton.onclick=function(){
         if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
          var names=request.responseText;
          names=JSON.parse(names);
+         comments=JSON.parse(comments);
          var list='';
          for(var i=0; i<names.length;i++)
             {
-            list+='<li>'+names[i]+'</li>';
+            list+='@<li>'+names[i]+'</li>'':<li>'+comments[i]+'</li>';
             //window.alert(names[i]);
             }
             var ol=document.getElementById('nameList');
             ol.innerHTML=list;   
             }
     };
-var nameInput=document.getElementById('name');
-var nameValue=nameInput.value;
-request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ nameValue,true);
+var name=document.getElementById('Name');
+var nameValue=name.value;
+var comments=document.getElementById('Comments');
+var commentValue=comments.value;
+request.open("GET","http://vandanasv.imad.hasura-app.io/submit-name?name="+ nameValue +"&comment="+ commentValue,true);
 request.send(null);
 };
 
