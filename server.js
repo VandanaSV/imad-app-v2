@@ -13,7 +13,21 @@ var config={
 
 var app = express();
 app.use(morgan('combined'));
+var pool = new Pool(config);
+app.get('/test-db',function(req,res){
+//Make a select request
+pool.query('SELECT * FROM test',function(err,result){
+    if(err)
+    {
+        res.status(500).send(err.toString());
+    }
+    else{
+        res.send(JASON.stringify(result));
+    }
+});
 
+//return response
+});
 
 var articles={
     'article-one':{
@@ -86,21 +100,8 @@ function createTemplate(data)
     return htmlTemplate;
 }
 
-var pool = new Pool(config);
-app.get('/test-db',function(req,res){
-//Make a select request
-pool.query('SELECT * FROM test',function(err,result){
-    if(err)
-    {
-        res.status(500).send(err.toString());
-    }
-    else{
-        res.send(JASON.stringify(result));
-    }
-});
 
-//return response
-});
+
 
 var counter=0;
 app.get('/counter', function (req, res) {
