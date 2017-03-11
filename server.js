@@ -22,7 +22,7 @@ pool.query('SELECT * FROM test',function(err,result){
         res.status(500).send(err.toString());
     }
     else{
-        res.send(JASON.stringify(result));
+        res.send(JASON.stringify(result.rows));
     }
 });
 
