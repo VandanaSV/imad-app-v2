@@ -9,7 +9,7 @@ var config={
     port:'5432',
     password:'db-vandanasv-94048'
     
-}
+};
 
 var app = express();
 app.use(morgan('combined'));
