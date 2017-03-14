@@ -146,10 +146,16 @@ app.get('article/:articleName', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-          res.send(JSON.stringify(result.rows));
+          if(result.rows.length===0){
+            res.status(404).send("ARTICLE NOT FOUND") ;
+            }
+            else{
+                var articleData=result.rows[0];
+                res.send(createTemplate(articleData));
+            }
       }
    });
-    res.send(createTemplate(articleData));
+    
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
