@@ -86,20 +86,19 @@ function createTemplate(data)
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+
 var pool = new Pool(config);
 app.get('/test/test-db',function(req,res){
-//Make a select request
-pool.query('select * from test',function(err,result){
-    if(err)
-    {
-        res.status(500).send(err.toString());
-    }
-    else{
-        res.send(JASON.stringify(result.rows));
-    }
-});
-
-//return response
+// make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM test ORDER BY date DESC', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   });
 });
 
 
