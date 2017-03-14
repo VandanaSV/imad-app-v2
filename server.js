@@ -12,41 +12,6 @@ var config={
     password:'db-vandanasv-94048'
     
 };
-var articles={
-    'article-one':{
-        title:'ARTICLE-ONE | THE FOUNTAIN HEAD',
-        heading:'THE FOUNTAIN HEAD: AYN RAND',
-        date:'February 5,2017',
-        content:` <p>
-                When it was first published in 1943,The fountainhead containing Ayn Rand's daringly original literary vision  with the seeds of her ground breakingphilosophy,Objectivism -won immediate worldwide acclaim.This instant classic is the story of an intransigent young architect,his violent battle against conventional standards and his explosie love affair with a beautiful woman who struggles to defeat him.
-            </p>
-            <p>
-                The newyork times described the book and its autother as " A writer of great power.She hs a subtle and ingenious mind and the capacity of writing brilliantly,beautifully,bitterly...This is the only novel of ideas written by an American woman that I can recall.".
-            </p>`
-    },
-    'article-two':{
-        title:'ARTICLE-TWO | ONE HUNDRED YEARS OF SOLITUDE',
-        heading:'ONE HUNDRED YEARS OF SOLITUDE: GABRIEL GARCIA MARQUEZ',
-        date:'February 10,2017',
-        content:` <p>
-              Pipes and kettledrums herald the arrival of gypsies on their annual visit to Mocondo,the newly founded village where Jose Arcadio Buendia and his father with new inventions and tales of adventure ,neither can know the significance of the indecipherirable manuscript that the old gypsies passes into therir hans.
-            </p>
-            <p>
-              Through plagues of insomnia,civil war,hauntings and vendettas,the many tribulations of the Buendia house-hold push memories of the manuscript aside.Few remember its existance and only one will discover the hidden message that it holds.
-            </p>`
-    },
-    'article-three':{
-        title:'ARTICLE-THREE | THE CATCHER IN THE RYE',
-        heading:'THE CATCHER IN THE RYE: J.D.SALINGER',
-        date:'February 15,2017',
-        content:` <p>
-                The Catcher in the Rye is a 1951 novel by J. D. Salinger. A controversial novel originally published for adults, it has since become popular with adolescent readers for its themes of teenage angst and alienation.
-            </p>
-            <p>
-                Jerome David Salinger was an American author, best known for his 1951 novel The Catcher in the Rye, as well as his reclusive nature. His last original published work was in 1965; he gave his last interview in 1980. Raised in Manhattan, Salinger began writing short stories while in secondary school, and published several stories in the early 1940s before serving in World War II.
-            </p>`
-    }
-};
 
 var app = express();
 app.use(morgan('combined'));
