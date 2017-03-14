@@ -10,10 +10,6 @@ var config={
     password:'db-vandanasv-94048'
     
 };
-
-var app = express();
-app.use(morgan('combined'));
-
 var articles={
     'article-one':{
         title:'ARTICLE-ONE | THE FOUNTAIN HEAD',
@@ -50,28 +46,8 @@ var articles={
     }
 };
 
-
-
-var pool = new Pool(config);
-app.get('/test/test-db',function(req,res){
-//Make a select request
-pool.query('select * from test',function(err,result){
-    if(err)
-    {
-        res.status(500).send(err.toString());
-    }
-    else{
-        res.send(JASON.stringify(result.rows));
-    }
-});
-
-//return response
-});
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
+var app = express();
+app.use(morgan('combined'));
 function createTemplate(data)
 {
     var title=data.title;
@@ -107,12 +83,24 @@ function createTemplate(data)
     return htmlTemplate;
 }
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+var pool = new Pool(config);
+app.get('/test/test-db',function(req,res){
+//Make a select request
+pool.query('select * from test',function(err,result){
+    if(err)
+    {
+        res.status(500).send(err.toString());
+    }
+    else{
+        res.send(JASON.stringify(result.rows));
+    }
+});
 
-
-
-
-
-
+//return response
+});
 
 
 
