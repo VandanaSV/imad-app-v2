@@ -12,17 +12,18 @@ var loginButton=document.getElementById('submit-login-button');
 loginButton.onclick=function(){
     request.onreadystatechange=function(){
         if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
-         var comments=request.responseText;
-         comments=JSON.parse(comments);
-         var list='';
-         for(var i=0; i<comments.length;i++)
-            {
-            list+='@</li>'+comments[i]+'</li><br>';
-            //window.alert(names[i]);
+            console.log('user logged in');
+            alert('Logged In !!!!');
             }
-            var ol=document.getElementById('commentslist');
-            ol.innerHTML=list;   
-            }
+            elseif(request.status===403)
+               {
+                   alert('Invalid Credentials');
+               }
+               elseif(request.status===500)
+               {
+                   alert('Server crashed');
+               }
+
     };
    var username=document.getElementById('username').value;
    var password=document.getElementById('password').value;
