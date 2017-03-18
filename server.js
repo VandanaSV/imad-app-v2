@@ -84,8 +84,21 @@ app.post('/create-user',function(req,res){
             {
                 res.send(403).send('Invalid Username/Password');
             }
-          res.send('Registration Successful'+username);
-        } 
+            else{
+              var dbString = result.rows[0].password;
+              var salt = dbString.split('$')[2];
+              var hashedPassword = hash(password, salt);
+              if (hashedPassword === dbString) {
+                // Set the session
+                req.session.auth = {userId: result.rows[0].id};
+         
+            res.send('credentials correct!');
+                
+              } else {
+                res.status(403).send('username/password is invalid');
+              }
+          
+        }    }
 });  
 });
 app.get('/hash/:input', function (req, res) {
