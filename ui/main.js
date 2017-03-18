@@ -11,6 +11,8 @@ var loginButton=document.getElementById('submit-login-button');
 loginButton.onclick=function(){
    var username=document.getElementById('username').value;
    var password=document.getElementById('password').value;
+   console.log(username);
+   console.log(password);
    request.open("POST","http://vandanasv.imad.hasura-app.io/login",true);
    request.send(JSON.stringify({username:username,password:password}));
 };
