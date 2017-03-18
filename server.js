@@ -80,6 +80,10 @@ app.post('/create-user',function(req,res){
           res.status(500).send(err.toString());
         } 
         else {
+            if(result.rows.length===0)
+            {
+                res.send(403).send('Invalid Username/Password');
+            }
           res.send('Registration Successful'+username);
         } 
 });  
