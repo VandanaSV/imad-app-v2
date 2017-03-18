@@ -1,5 +1,13 @@
 
 
+
+
+var downloadButton=document.getElementById('downloadButton');
+downloadButton.onclick=function(){
+    var downloadUrl = "https://drive.google.com/file/d/0B9T6oE4VgbewQ2daTHdTb19VYUk/view?usp=drive_web";
+    window.location=downloadUrl;
+};
+
 //LOGIN FUNCTIONALITY
 var loginButton=document.getElementById('submit-login-button');
 loginButton.onclick=function(){
@@ -28,14 +36,6 @@ loginButton.onclick=function(){
    request.setRequestHeader('Content-Type','application/json');
    request.send(JSON.stringify({username:username,password:password}));
 };
-
-var downloadButton=document.getElementById('downloadButton');
-downloadButton.onclick=function(){
-    var downloadUrl = "https://drive.google.com/file/d/0B9T6oE4VgbewQ2daTHdTb19VYUk/view?usp=drive_web";
-    window.location=downloadUrl;
-};
-
-
 
 //Submit name javascript
 var commentButton=document.getElementById('comment-submit');
