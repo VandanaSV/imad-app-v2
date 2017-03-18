@@ -9,9 +9,9 @@ downloadButton.onclick=function(){
 //LOGIN FUNCTIONALITY
 var loginButton=document.getElementById('submit-login-button');
 loginButton.onclick=function(){
-   var username=document.getElementById('username');
-   var password=document.getElementById('password');
-   request.open("POST","http://vandanasv.imad.hasura-app.io/login?comment="+ commentValue,true);
+   var username=document.getElementById('username').value;
+   var password=document.getElementById('password').value;
+   request.open("POST","http://vandanasv.imad.hasura-app.io/login",true);
    request.send(JSON.stringify({username:username,password:password}));
 };
 //Submit name javascript
