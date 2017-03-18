@@ -16,6 +16,7 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+
 function createTemplate(data)
 {
     var title=data.title;
@@ -70,7 +71,6 @@ app.post('/create-user',function(req,res){
         } 
 });
 });
-
 app.post('/login',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
@@ -101,6 +101,7 @@ app.post('/login',function(req,res){
         }    }
 });  
 });
+
 app.get('/hash/:input', function (req, res) {
   var hashedString=hash(req.params.input,'This is some random string');
   res.send(hashedString);
