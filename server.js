@@ -68,9 +68,21 @@ app.post('/create-user',function(req,res){
         else {
           res.send('Registration Successful'+username);
         } 
-    
 });
-    
+});
+
+app.post('/create-user',function(req,res){
+    var username=req.body.username;
+    var password=req.body.password;
+
+    pool.query('INSERT INTO "user" (username,password) VALUES ($1,$2)',[username,dbString],function (err, result){
+        if (err) {
+          res.status(500).send(err.toString());
+        } 
+        else {
+          res.send('Registration Successful'+username);
+        } 
+});  
 });
 app.get('/hash/:input', function (req, res) {
   var hashedString=hash(req.params.input,'This is some random string');
