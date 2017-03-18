@@ -5,7 +5,6 @@ var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser=require('body-parser');
 var app = express();
-app.use(morgan('combined'));
 var config={
     user:'vandanasv',
     database:'vandanasv',
@@ -14,9 +13,9 @@ var config={
     password:'db-vandanasv-94048'
     
 };
-
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 function createTemplate(data)
 {
     var title=data.title;
