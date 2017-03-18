@@ -5,8 +5,16 @@ downloadButton.onclick=function(){
     var downloadUrl = "https://drive.google.com/file/d/0B9T6oE4VgbewQ2daTHdTb19VYUk/view?usp=drive_web";
     window.location=downloadUrl;
 };
-//Submit name javascript
 
+//LOGIN FUNCTIONALITY
+var loginButton=document.getElementById('submit-login-button');
+loginButton.onclick=function(){
+   var username=document.getElementById('username');
+   var password=document.getElementById('password');
+   request.open("POST","http://vandanasv.imad.hasura-app.io/login?comment="+ commentValue,true);
+   request.send(JSON.stringify({username:username,password:password}));
+};
+//Submit name javascript
 var commentButton=document.getElementById('comment-submit');
 commentButton.onclick=function(){
     
@@ -36,24 +44,6 @@ request.send(null);
 
 
 
-/*//The Counter incrementing task
-var button=document.getElementById("counter"); 
-button.onclick=function(){
-  //Creating a request object
-    var request= new XMLHttpRequest();
-  // Rendering content inside span tag
-    request.onreadystatechange=function(){
-        if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
-            var counter=request.responseText;
-            var span=document.getElementById('count');
-            span.innerHTML=counter;
-        }
-    }
-    //make a request to counter page
-    request.open("GET","http://vandanasv.imad.hasura-app.io/counter",true);
-    request.send(null);
-};
-*/
 
   
 
