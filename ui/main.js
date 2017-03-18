@@ -15,11 +15,11 @@ loginButton.onclick=function(){
             console.log('user logged in');
             alert('Logged In !!!!');
             }
-            elseif(request.status===403)
+            else if(request.status===403)
                {
                    alert('Invalid Credentials');
                }
-               elseif(request.status===500)
+               else if(request.status===500)
                {
                    alert('Server crashed');
                }
