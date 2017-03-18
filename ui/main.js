@@ -6,9 +6,24 @@ downloadButton.onclick=function(){
     window.location=downloadUrl;
 };
 
+
 //LOGIN FUNCTIONALITY
 var loginButton=document.getElementById('submit-login-button');
 loginButton.onclick=function(){
+    request.onreadystatechange=function(){
+        if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
+         var comments=request.responseText;
+         comments=JSON.parse(comments);
+         var list='';
+         for(var i=0; i<comments.length;i++)
+            {
+            list+='@</li>'+comments[i]+'</li><br>';
+            //window.alert(names[i]);
+            }
+            var ol=document.getElementById('commentslist');
+            ol.innerHTML=list;   
+            }
+    };
    var username=document.getElementById('username').value;
    var password=document.getElementById('password').value;
    console.log(username);
