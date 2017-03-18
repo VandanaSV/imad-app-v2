@@ -34,7 +34,7 @@ loginButton.onclick=function(){
    console.log(password);
    request.open("POST","http://vandanasv.imad.hasura-app.io/login",true);
    request.setRequestHeader('Content-Type','application/json');
-   request.send(JSON.stringify({username1:username,password1:password}));
+   request.send(JSON.stringify({username:username,password:password}));
 };
 
 //COMMENT BOX FUNCTIONALITY
