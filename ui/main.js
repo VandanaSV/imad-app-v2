@@ -1,7 +1,7 @@
 
 
 
-
+//DOWNLOAD RESUME FUNCTIONALITY
 var downloadButton=document.getElementById('downloadButton');
 downloadButton.onclick=function(){
     var downloadUrl = "https://drive.google.com/file/d/0B9T6oE4VgbewQ2daTHdTb19VYUk/view?usp=drive_web";
@@ -37,13 +37,12 @@ loginButton.onclick=function(){
    request.send(JSON.stringify({username:username,password:password}));
 };
 
-//Submit name javascript
+//COMMENT BOX FUNCTIONALITY
 var commentButton=document.getElementById('comment-submit');
 commentButton.onclick=function(){
-    
-    //Creating a request object
-    var request= new XMLHttpRequest();
-  // Rendering content inside span tag
+//Creating a request object
+ var request= new XMLHttpRequest();
+ // Rendering content inside span tag
     request.onreadystatechange=function(){
         if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
          var comments=request.responseText;
