@@ -3,8 +3,9 @@
 //LOGIN FUNCTIONALITY
 var loginButton=document.getElementById('submit-login-button');
 loginButton.onclick=function(){
+    var request= new XMLHttpRequest();
     request.onreadystatechange=function(){
-         var request= new XMLHttpRequest();
+         
         if(((request.readyState)===XMLHttpRequest.DONE)&&((request.status===200))){
             console.log('user logged in');
             alert('Logged In !!!!');
